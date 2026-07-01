@@ -2,6 +2,9 @@ import pandas as pd
 
 # load data from csv
 data = pd.read_csv("Books.csv")
+print(data.info())
 
-# Group by ISBN and get count of each feature
-grouped_authors = data.groupby(['ISBN']).count().to_csv("group_by_isbn.csv")
+# Normalize dataframes
+Book = data['ISBN', 'Year-Of-Publication', 'Image-URL-S', 'Image-URL-M', 'Image-URL-L']
+Author = data['Book-Author']
+Publisher = data['Publisher']
